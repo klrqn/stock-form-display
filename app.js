@@ -59,13 +59,13 @@ var submit = document.getElementById('submit');
 
 //Event listener
 submit.addEventListener('click', function getTarget(e) {
-  e.preventDefault()
+  e.preventDefault();
   var jsTickerInput = document.getElementById('ticker_input').value;
   var jsNameInput = document.getElementById('name_input').value;
   var jsPriceInput = document.getElementById('price_input').value;
   var jsChangeInput = document.getElementById('change_input').value;
   var jsMarketcapInput = document.getElementById('marketcap_input').value;
   var newStock = new Stock(jsTickerInput, jsNameInput, jsPriceInput, jsChangeInput, jsMarketcapInput);
-  blog.addPost(newStock);
+  blog.addStock(newStock);
   addToHTML();
 });
