@@ -1,10 +1,10 @@
 //Stock object model
-function Stock(ticker, name, price, change, marketCap) {
+function Stock(ticker, name, price, change, marketcap) {
 	this.ticker = ticker;
 	this.name = name;
 	this.price = price;
 	this.change = change;
-	this.marketCap = marketCap;
+	this.marketcap = marketcap;
 }
 
 //Blog object model
@@ -29,11 +29,11 @@ blog.addStock(stockABC);
 function addToHTML() {
 	for(var i=0; i<blog.post.length; i++){
 		var article = document.querySelector('#blog_posts');
-		var ticker = document.createElement('h1');
-		var name = document.createElement('h2');
-		var price = document.createElement('p');
-		var change = document.createElement('p');
-		var marketcap = document.createElement('p');
+		var name = document.createElement('h1');
+		var ticker = document.createElement('h2');
+		var price = document.createElement('span');
+		var change = document.createElement('span');
+		var marketcap = document.createElement('span');
 
 		var blog_ticker = blog.post[i].ticker;
 		var blog_name = blog.post[i].name;
@@ -41,14 +41,14 @@ function addToHTML() {
 		var blog_change = blog.post[i].change;
 		var blog_marketcap = blog.post[i].marketcap;
 
-		ticker.textContent = blog_ticker;
-		name.textContent = blog_name;
-		price.textContent = blog_price;
-		change.textContent = blog_change;
-		marketcap.textContent = blog_marketcap;
+		name.textContent = `Stock Name: ${blog_name} \t`;
+		ticker.textContent = `Ticker: ${blog_ticker} \t`;
+		price.textContent = `Stock Price: ${blog_price} \t`;
+		change.textContent = `Stock Price Change: ${blog_change} \t`;
+		marketcap.textContent = `Marketcap: ${blog_marketcap} \t`;
 
-		article.appendChild(ticker);
 		article.appendChild(name);
+		article.appendChild(ticker);
 		article.appendChild(price);
 		article.appendChild(change);
 		article.appendChild(marketcap);
